@@ -1,0 +1,129 @@
+:root {
+    --background-color: #f0f0f0;
+    --secondary-bg-color: #1a1a1a;
+    --primary-color: #333;
+    --secondary-color: #e0e0e0;
+    --secondary-text-color: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.stat-card .stat-label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.history {
+       background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.history.visible {
+    display: block;
+}
+
+.game input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.game input:focus {
+    outline: none;
+    border: 1px solid var(--primary-color);
+}
+
+
+.game input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.game button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.game button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+
+.btn-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn-restart {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+
+@media (max-width: 480px) {
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}
