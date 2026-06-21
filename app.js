@@ -1,4 +1,3 @@
-// DOM references — renamed to avoid collision with game state variables
 const scoreEl = document.getElementById('score')
 const highScoreEl = document.getElementById('high-score')
 const winsEl = document.getElementById('wins')
@@ -53,7 +52,7 @@ function saveToLocalStorage() {
 function addToHistory(guess, result) {
     guessHistory.push({ guess, result })
     historyEl.classList.add('visible')
-    // FIX 1: was `history.innerHTML` (global window.history object), now correctly `historyEl.innerHTML`
+    
     historyEl.innerHTML = `
         <strong>Guess history:</strong>
         <ul style="list-style:none; padding:0; margin-top:10px;">
@@ -84,7 +83,7 @@ function handleGuess() {
         wins++
 
         saveToLocalStorage()
-        // FIX 2: updateScore() moved to after highScore/wins/currentScore are all set
+        
         updateScore()
 
         messageEl.textContent = `Correct! The number was ${randomNumber}. Your score: ${currentScore} points.`
@@ -103,7 +102,7 @@ function handleGuess() {
         addToHistory(guess, 'Too high')
     }
 
-    // FIX 3: was just `attemptsLeft` with no label — now shows full "X attempts left"
+    
     attemptsEl.textContent = `${attemptsLeft} attempts left`
 
     updateScore()
